@@ -1,0 +1,118 @@
+@-webkit-keyframes rotarCubo{
+    0%{ transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+        -ms-transform: rotateY(0);
+        -o-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+    }
+    100%{transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
+    }
+}
+
+body{
+    font-family: sans-serif;
+}
+main{
+    perspective: 800px;
+    perspective-origin: 50% -100px;
+}
+section{
+    width: 200px;
+    margin: 30% auto;
+    /*Para poder transladar en el eje de las Z (3D=profundidad) debo poner la propiedad transform-style diciendo que preserve esas propiedades*/
+    transform-style: preserve-3d;
+    animation: rotarCubo 3s infinite linear;
+    -webkit-animation: rotarCubo 3s infinite linear;
+    -ms-animation: rotarCubo 3s infinite linear;
+    -o-animation: rotarCubo 3s infinite linear;
+    -moz-animation: rotarCubo 3s infinite linear;
+}
+section:hover{
+    cursor:pointer;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+}
+
+section div{
+    width: 200px;
+    height: 200px;
+    background: rgba(0,255,0,.3);
+    font-size: 3em;
+    text-align: center;
+    line-height: 200px;
+    color:#fff;
+    border:1px solid #333;
+    position: absolute;
+}
+section div:nth-child(1){
+    background: rgba(255,0,0,.3);
+}
+.front{
+    transform: translateZ(100px);
+    -webkit-transform: translateZ(100px);
+    -ms-transform: translateZ(100px);
+    -o-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+}
+.back{
+    transform: translateZ(-100px) rotateY(180deg);
+    -webkit-transform: translateZ(-100px) rotateY(180deg);
+    -moz-transform: translateZ(-100px) rotateY(180deg);
+    -o-transform: translateZ(-100px) rotateY(180deg);
+    -ms-transform: translateZ(-100px) rotateY(180deg);
+}
+.top{
+     transform: rotateX(-90deg) translateY(-100px);
+     -webkit-transform: rotateX(-90deg) translateY(-100px);
+     -moz-transform: rotateX(-90deg) translateY(-100px);
+     -o-transform: rotateX(-90deg) translateY(-100px);
+     -ms-transform: rotateX(-90deg) translateY(-100px);
+     transform-origin: top center;
+     -webkit-transform-origin: top center;
+     -moz-transform-origin: top center;
+     -o-transform-origin: top center;
+     -ms-transform-origin: top center;
+}
+.bottom{
+    transform: rotateX(90deg)  translateY(100px);
+    -webkit-transform: rotateX(90deg)  translateY(100px);
+    -moz-transform: rotateX(90deg)  translateY(100px);
+    -o-transform: rotateX(90deg)  translateY(100px);
+    -ms-transform: rotateX(90deg)  translateY(100px);
+    transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+    -moz-transform-origin: bottom center;
+    -o-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+}
+.left{
+    transform: rotateY(270deg) translateX(-100px);
+    -webkit-transform: rotateY(270deg) translateX(-100px);
+    -moz-transform: rotateY(270deg) translateX(-100px);
+    -o-transform: rotateY(270deg) translateX(-100px);
+    -ms-transform: rotateY(270deg) translateX(-100px);
+    transform-origin: left center;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    -ms-transform-origin: left center;
+}
+.right{
+    transform: rotateY(-270deg)translateX(100px);
+    -webkit-transform: rotateY(-270deg)translateX(100px);
+    -moz-transform: rotateY(-270deg)translateX(100px);
+    -o-transform: rotateY(-270deg)translateX(100px);
+    -ms-transform: rotateY(-270deg)translateX(100px);
+    transform-origin: right center;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    -ms-transform-origin: right center;
+}
